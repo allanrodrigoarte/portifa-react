@@ -17,7 +17,14 @@ export default function ProjectTemplate({
           <div className="text-2xl text-gray-400">{period}</div>
         </div>
         <div className="flex flex-col items-center">
-          <img src={logo} alt={logoAlt} className="h-20 mb-1 object-contain" />
+          {logo && (
+            <img
+              src={logo}
+              alt={logoAlt || "Logo"}
+              className="h-20 mb-1 object-contain"
+              onError={e => (e.target.style.display = 'none')}
+            />
+          )}
           {siteUrl && (
             <a
               href={siteUrl}
@@ -35,15 +42,15 @@ export default function ProjectTemplate({
       {summary && <div className="mb-10 text-lg">{summary}</div>}
 
       {/* Details Section */}
-      <div className="grid md:grid-cols-2 gap-x-16 gap-y-16 mb-16">
+      <div className="grid md:grid-cols-2 gap-8 mb-12">
         {details.map((section, idx) => (
           <div key={idx}>
-            <h2 className="font-bold text-xl mb-3">{section.title}</h2>
-            <ul className="list-disc list-inside space-y-2">
+            <h2 className="font-bold text-xl mb-2">{section.title}</h2>
+            <div className="space-y-1">
               {section.points.map((pt, i) => (
-                <li key={i}>{pt}</li>
+                <div key={i}>{pt}</div>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>
@@ -55,8 +62,9 @@ export default function ProjectTemplate({
             <img
               key={idx}
               src={img.src}
-              alt={img.alt}
+              alt={img.alt || "Project image"}
               className="rounded shadow-md w-full object-cover"
+              onError={e => (e.target.style.display = 'none')}
             />
           ))}
         </div>

@@ -6,7 +6,13 @@ const items = [
     logo: "/imgs/printi-logo.png",
     name: "Printi.com.br",
     period: "2012–2015",
-    desc: ["Branding", "Print Skills"],
+    desc: [
+      "Brand design",
+      "Printing skills",
+      "Packaging designs",
+      "Prepress",
+      "Production designer",
+    ],
     link: "/projects/printi",
     linkText: "See project",
     bold: true,
@@ -15,16 +21,34 @@ const items = [
     logo: "/imgs/ahh-logo.png",
     name: "AHH! Agency",
     period: "2015–2017",
-    desc: ["Social Media", "Production Design"],
+    desc: [
+      "Social media",
+      "Production design",
+      "Growth",
+      "Brand design",
+    ],
     link: "/projects/ahh",
     linkText: "See project",
     bold: true,
   },
   {
     logo: "/imgs/csbl-logo.png",
-    name: "CSBL - Computational System Biology Lab - USP",
+    name: (
+      <>
+        <span className="font-bold text-xl">CSBL</span>
+        <br />
+        <span className="text-base font-normal">
+          Computational System Biology Lab - USP
+        </span>
+      </>
+    ),
     period: "2020–2022",
-    desc: ["Branding", "Academic Design"],
+    desc: [
+      "Brand design",
+      "Scientific design",
+      "Scientific illustrations",
+      "International team",
+    ],
     link: "/projects/csbl",
     linkText: "See project",
     bold: false,
@@ -33,55 +57,89 @@ const items = [
     logo: "/imgs/gg-logo.png",
     name: "gg.xyz",
     period: "2022–2025",
-    desc: ["UX / UI Lead Designer", "Branding"],
-    link: "/projects/ggxyz",
-    linkText: "See project",
+    desc: [
+      "UX / UI",
+      "Lead Designer",
+      "Brand design",
+      "Token Features",
+      "Web3/ Crypto focused",
+      "International team",
+    ],
+    link: "/projects/ggrebrand",
+    linkText: "See projects",
     bold: true,
   },
 ];
 
 export default function Timeline() {
   return (
-    <div className="w-full min-h-screen py-16 bg-white font-mono">
-      <div className="max-w-5xl mx-auto px-4">
-        {/* Linha timeline */}
-        <div className="relative">
-          {/* Linha central */}
-          <div className="absolute top-16 left-0 w-full h-2 z-0 bg-gradient-to-r from-purple-600 via-purple-400 to-gray-200 rounded-full" />
-          {/* Itens */}
-          <div className="relative flex flex-row justify-between z-10">
-            {items.map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center flex-1">
-                {/* Logo */}
+    <div className="w-full min-h-screen py-16 bg-neutral-100 font-mono">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Logos row */}
+        <div className="flex flex-row justify-between items-end mb-8 gap-16">
+          {items.map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center w-[348px]">
+              <div className="bg-white rounded-lg border border-gray-300 flex items-center justify-center h-[180px] w-full mb-4 shadow-sm">
                 <img
                   src={item.logo}
                   alt={item.name}
-                  className="h-20 w-20 rounded-full object-contain bg-white border-2 border-gray-200 mb-2"
-                  style={{ marginBottom: "24px", marginTop: "8px" }}
+                  className="object-contain max-h-[90px] max-w-[200px]"
                 />
-                {/* Circulo timeline */}
-                <div className="w-16 h-16 rounded-full border-4 border-purple-400 bg-white flex items-center justify-center z-10" style={{ marginBottom: "24px", marginTop: "-40px" }}></div>
-                {/* Conteúdo */}
-                <div className="flex flex-col items-center text-center min-h-[180px]">
-                  <div className="font-bold text-xl mb-1">
-                    {item.bold ? <strong>{item.name}</strong> : item.name}
-                  </div>
-                  <div className="text-gray-500 text-2xl mb-1">{item.period}</div>
-                  <ul className="mb-2">
-                    {item.desc.map((d, i) => (
-                      <li key={i}>{d}</li>
-                    ))}
-                  </ul>
-                  <Link
-                    to={item.link}
-                    className="text-purple-700 underline font-bold hover:text-purple-900"
-                  >
-                    {item.linkText}
-                  </Link>
-                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Timeline Line */}
+        <div className="relative h-12 mb-8 flex items-center">
+          <div className="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-4 z-0">
+            <div className="w-full h-2 bg-gradient-to-r from-gray-600 via-blue-400 to-gray-200 rounded-full"></div>
+          </div>
+          <div className="flex flex-row justify-between w-full relative z-10">
+            {items.map((_, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center w-[348px]"
+              >
+                <div className="w-12 h-12 rounded-full border-8 border-blue-400 bg-white shadow"
+                  style={{ margin: "0 auto" }}
+                ></div>
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Cards row */}
+        <div className="flex flex-row justify-between gap-16">
+          {items.map((item, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col justify-between items-start w-[348px] min-h-[281px] h-[320px] p-6 rounded-lg border border-black bg-white gap-3"
+              style={{
+                boxShadow: "0 0 0 0 rgba(0,0,0,0.02)",
+              }}
+            >
+              <div>
+                <div className="font-bold text-xl mb-2">
+                  {item.bold ? <strong>{item.name}</strong> : item.name}
+                </div>
+                <div className="italic text-lg text-gray-600 mb-4">{item.period}</div>
+                <div>
+                  {item.desc.map((d, i) => (
+                    <div key={i} className="text-base leading-tight">
+                      {d}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <Link
+                to={item.link}
+                className="text-gray-600 underline font-semibold hover:text-blue-900 mt-3"
+              >
+                {item.linkText}
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </div>

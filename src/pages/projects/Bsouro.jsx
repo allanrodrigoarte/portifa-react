@@ -8,7 +8,7 @@ export default function Bsouro() {
       siteUrl={null}
       title="Bienal Naïfs do Brasil (2018) Spetial mention"
       period="2018"
-      summary="NFT4Artists Project - Winner"
+      summary="Special mention for the short film “Besouro Independente” at the 14th Bienal Naïfs do Brasil."
       details={[
         {
           title: "Goal:",

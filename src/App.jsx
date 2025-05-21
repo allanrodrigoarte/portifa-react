@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Timeline from "./pages/Timeline";
 import TailwindTest from "./pages/TailwindTest";
 import Printi from "./pages/Printi";
+import Breadcrumbs from './components/Breadcrumbs';
 
 // Projetos
 import Bsouro from "./pages/projects/Bsouro";
@@ -27,6 +28,7 @@ export default function TailwindTestApp() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <Breadcrumbs />
         <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<TailwindTest />} />

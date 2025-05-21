@@ -37,8 +37,14 @@ export default function Printi() {
       ]}
       images={[
         { src: "/imgs/printi-pack.png", alt: "Printi Pack" },
-        { src: "/imgs/printi-PEGN.png", alt: "Printi PEGN" },
+        { src: "/imgs/printi-ad.jpg", alt: "Printi Ad" },
         { src: "/imgs/printi-stationary.png", alt: "Printi Stationary" },
+        { src: "/imgs/printi-magazine.jpg", alt: "Printi Magazine" },
+        { src: "/imgs/printi-folder.jpg", alt: "Printi Folder" },
+        { src: "/imgs/printi-proto.jpg", alt: "Printi Prototype" },
+        { src: "/imgs/printi-cover_fb1.jpg", alt: "Printi Cover" },
+        { src: "/imgs/printi-cover_fb2.png", alt: "Printi Cover" },
+        { src: "/imgs/printi-cover_fb3.png", alt: "Printi Cover" },
       ]}
     />
   );

@@ -75,6 +75,8 @@ export default function Timeline() {
   return (
     <div className="w-full min-h-screen py-16 bg-neutral-100 font-mono">
       <div className="max-w-7xl mx-auto px-4">
+         {/* Título principal */}
+        <h1 className="text-4xl font-bold mb-10">Professional Experience</h1>
         {/* Logos row */}
         <div className="flex flex-row justify-between items-end mb-8 gap-16">
           {items.map((item, idx) => (
@@ -145,3 +147,4 @@ export default function Timeline() {
     </div>
   );
 }
+// src/pages/Timeline.jsx

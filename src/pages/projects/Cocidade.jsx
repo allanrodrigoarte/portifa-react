@@ -35,7 +35,13 @@ export default function Cocidade() {
           ],
         },
       ]}
-      images={[]}
+      images={[
+        { src: "/imgs/cocidade-poster1.png", alt: "COCIDADE Festival Poster 1" },
+        { src: "/imgs/cocidade-social1.png", alt: "COCIDADE Social Media Graphic" },
+        { src: "/imgs/cocidade-animation1.png", alt: "Projection Animation Still" },
+        { src: "/imgs/cocidade-crowd1.png", alt: "Festival Crowd at Anhagabaú" },
+      ]}
     />
   );
 }
+``

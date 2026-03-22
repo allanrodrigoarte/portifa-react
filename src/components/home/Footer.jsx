@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className="grid gap-3 text-sm text-white/72">
           <a href="mailto:allan@example.com" className="transition hover:text-white">
-            allan@example.com
+            allanrodrigo.arte@gmail.com
           </a>
           <a
             href="https://www.linkedin.com"
@@ -37,10 +37,13 @@ export default function Footer() {
             className="transition hover:text-white"
           >
             GitHub
-          </a>
-          <a href="/files/allan-rodrigo-cv.pdf" className="transition hover:text-white">
-            Download CV
-          </a>
+          </a><a
+  href="/imgs/cv/Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+  download="Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+  className="transition hover:text-white"
+>
+  Download CV
+</a>
         </div>
       </div>
     </footer>

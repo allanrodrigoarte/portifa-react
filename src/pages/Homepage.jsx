@@ -42,7 +42,7 @@ export default function Homepage() {
         }}
       />
 
-      <Header />
+     
 
       <main className="relative z-10">
         <HeroSection />

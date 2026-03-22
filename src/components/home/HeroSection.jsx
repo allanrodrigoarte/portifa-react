@@ -1,19 +1,18 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Layers3, Sparkles } from "lucide-react";
 
 const stats = [
-  { value: "12+", label: "Years of experience" },
-  { value: "Web3", label: "Crypto-native product work" },
-  { value: "Systems", label: "Design systems and scalability" },
+  { value: "12+", label: "Years designing digital products" },
+  { value: "UI", label: "Interface design with strong hierarchy" },
+  { value: "Web3", label: "Crypto-native UX and product flows" },
 ];
 
 const tags = [
-  "UX Strategy",
-  "Product Design",
-  "Branding",
+  "UI Design",
+  "Web3 Interfaces",
+  "Animation",
+  "Product Strategy",
   "Design Systems",
-  "Web3",
-  "Front-end",
+  "Front-end Aware",
 ];
 
 export default function HeroSection() {
@@ -25,16 +24,17 @@ export default function HeroSection() {
           Product Designer • UX/UI • Web3
         </p>
 
-        <h3 className="mt-3 max-w-[18ch] text-3xl font-semibold leading-[1] tracking-tight text-white md:text-5xl">
+        <h3 className="mt-3 max-w-[20ch] text-3xl font-semibold leading-[1] tracking-tight text-white md:text-5xl">
   Senior Product Designer.
-  UX/UI systems, 3D and Web3.
+  UX/UI systems, 3D, animation and Web3.
 </h3>
 
         <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">
-          I’m Allan Rodrigo, a Senior Product Designer and UX/UI Lead focused on
-          digital products, branding systems and Web3 experiences. I combine
-          product thinking, visual craft and front-end execution to turn complex
-          ideas into clear interfaces.
+          I’m Allan Rodrigo, a Senior Product Designer focused on high-quality
+          UI, crypto-native product experiences and visual storytelling.
+            With a animation background, I bring motion to digital experiences.
+          I design interfaces that balance clarity, identity and real
+          product depth.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -92,26 +92,34 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          <div className="mt-4 grid gap-3 lg:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <div className="flex items-center gap-2 text-sm font-medium text-white">
                 <Layers3 className="h-4 w-4 text-violet-300" />
-                Core focus
+                Animation
               </div>
               <p className="mt-2 text-sm leading-6 text-white/68">
-                Product thinking, onboarding flows, retention loops, systemized
-                UI and brand consistency.
+                3D, motion and storytelling for product and campaigns.
               </p>
             </div>
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <div className="flex items-center gap-2 text-sm font-medium text-white">
                 <Code2 className="h-4 w-4 text-sky-300" />
-                Built mindset
+                UI Design 
               </div>
               <p className="mt-2 text-sm leading-6 text-white/68">
-                React, Tailwind and implementation awareness for better
-                handoff, feasibility and polish.
+                Clean interfaces with strong hierarchy and scalable systems.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+              <div className="flex items-center gap-2 text-sm font-medium text-white">
+                <Sparkles className="h-4 w-4 text-pink-300" />
+                Web3
+              </div>
+              <p className="mt-2 text-sm leading-6 text-white/68">
+                Token flows, onboarding and trust-focused crypto UX.
               </p>
             </div>
           </div>

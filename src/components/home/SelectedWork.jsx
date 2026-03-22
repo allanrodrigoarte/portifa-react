@@ -9,7 +9,7 @@ const works = [
   },
   {
     title: "gg.xyz Rebrand",
-    image: "/imgs/gg-logo.png",
+    image: "/imgs/ggbrand1.png",
     tags: ["Branding", "System", "Creative Direction"],
     href: "/projects/ggrebrand",
   },
@@ -21,19 +21,19 @@ const works = [
   },
   {
     title: "CSBL Scientific Design",
-    image: "/imgs/csbl-logo.png",
+    image: "/imgs/csbl/csbl-cover.png",
     tags: ["Scientific Design", "Data Viz", "Branding"],
     href: "/projects/csbl",
   },
   {
     title: "Printi Launch → Success",
-    image: "/imgs/printi-logo.png",
+    image: "/imgs/printi/printi-cover.png",
     tags: ["Branding", "Print", "Production"],
     href: "/projects/printi",
   },
   {
     title: "Bsouro",
-    image: "/imgs/bienal-logo.png",
+    image: "/imgs/bienal/bienal-cover.png",
     tags: ["Art Direction", "Animation", "Authorial Work"],
     href: "/projects/bsouro",
   },

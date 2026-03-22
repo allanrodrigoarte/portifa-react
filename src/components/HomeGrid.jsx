@@ -1,24 +1,28 @@
-// src/components/HomeGrid.jsx
 import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 
 const items = [
   {
-    title: ["Logo", "&", "Branding"],
+    title: "Logo & Branding",
+    subtitle: "Identity systems, campaigns and visual direction",
     image: "/imgs/t_cloud.png",
     link: "/branding",
   },
   {
-    title: ["UX /Ui", "+", "Web3/ NFT"],
+    title: "UX/UI + Web3",
+    subtitle: "Product flows, onboarding and token experiences",
     image: "/imgs/t_ux.png",
     link: "/uxui",
   },
   {
-    title: ["Animation", "&", "3D"],
+    title: "Animation & 3D",
+    subtitle: "Motion visuals, NFT campaigns and storytelling",
     image: "/imgs/aspontas/estrela-logo.png",
-    link: "/Animation",
+    link: "/animation",
   },
   {
-    title: ["Sci Design", "&", "Data Viz"],
+    title: "Sci Design & Data Viz",
+    subtitle: "Scientific visuals, systems and information clarity",
     image: "/imgs/t_sci.png",
     link: "/viz",
   },
@@ -27,99 +31,57 @@ const items = [
 export default function HomeGrid() {
   return (
     <div className="relative w-full">
-      {/* container: single-row, responsive, snap scroll */}
       <div
-        className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2"
+        className="flex gap-5 overflow-x-auto pb-2 snap-x snap-mandatory"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
         }}
       >
-        {/* hide scrollbar (webkit) */}
         <style>{`
-          .flex::-webkit-scrollbar { display: none; }
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
         `}</style>
 
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <Link
+            key={item.title}
             to={item.link}
-            key={idx}
-            aria-label={item.title.join(" ")}
-            className="
-              group relative flex-none snap-start
-              w-[85%] sm:w-[55%] md:w-[40%] lg:w-[28%] xl:w-[24%]
-              h-56 md:h-64
-              rounded-2xl overflow-hidden
-              border border-white/15 bg-white/5
-              transition-[transform,box-shadow,border-color] duration-300
-              hover:-translate-y-0.5 hover:border-white/30
-              "
+            className="hide-scrollbar group relative flex-none snap-start w-[88%] sm:w-[62%] md:w-[44%] lg:w-[31%] xl:w-[24%] min-h-[280px] overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]"
           >
-            {/* subtle glow stroke on hover */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-300"
-              style={{
-                boxShadow:
-                  "0 0 0 1px rgba(255,255,255,0.15), inset 0 0 64px rgba(255,255,255,0.04)",
-              }}
-            />
-
-            {/* image */}
             <img
               src={item.image}
-              alt={item.title.join(" ")}
-              className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-300 scale-100 group-hover:scale-105"
-              loading="lazy"
+              alt={item.title}
+              className="absolute inset-0 h-full w-full object-cover opacity-55 transition duration-500 group-hover:scale-105 group-hover:opacity-75"
             />
 
-            {/* dark gradient for legibility */}
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"
-            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/80" />
 
-            {/* title (keeps your mono typography) */}
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center font-mono text-white text-lg md:text-xl leading-snug px-4">
-              {item.title.map((line, i) => (
-                <span key={i} className="drop-shadow-[0_1px_0_rgba(0,0,0,0.6)]">
-                  {line}
+            <div className="relative z-10 flex h-full flex-col justify-between p-6">
+              <div className="flex items-start justify-between gap-4">
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-white/70">
+                  Explore
                 </span>
-              ))}
-            </div>
 
-            {/* corner arrow cue */}
-            <div className="absolute right-3 bottom-3 z-10">
-              <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/20 text-white/90 transition group-hover:bg-white group-hover:text-black group-hover:border-white">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M7 17L17 7" />
-                  <path d="M7 7h10v10" />
-                </svg>
-              </span>
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white/80 transition group-hover:bg-white group-hover:text-black">
+                  <ArrowUpRight className="h-4 w-4" />
+                </span>
+              </div>
+
+              <div>
+                <h3 className="max-w-[12ch] text-2xl font-semibold leading-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-3 max-w-[28ch] text-sm leading-6 text-white/70">
+                  {item.subtitle}
+                </p>
+              </div>
             </div>
           </Link>
         ))}
       </div>
 
-      {/* edge fade masks for nicer scroll edges (optional, only on wide screens) */}
-      <div
-        aria-hidden
-        className="pointer-events-none hidden md:block absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none hidden md:block absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black to-transparent"
-      />
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-[#050505] to-transparent lg:block" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-16 bg-gradient-to-l from-[#050505] to-transparent lg:block" />
     </div>
   );
 }

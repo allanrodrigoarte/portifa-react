@@ -15,7 +15,10 @@ export default function Cont() {
           {/* Informações de contato */}
           <div className="flex flex-col text-2xl items-center gap-2 text-center">
             <h2 className="text-4xl font-bold">Allan Rodrigo</h2>
-            <p><strong>Phone:</strong> +55 11 95487 9853</p>
+            <p><strong>Whatsapp:</strong><a
+                href="wa.me/+5511966250826"
+                className="underline hover:text-blue-700 transition"
+              > +5511966250826</a></p>
             <p>
               <strong>Email:</strong>{" "}
               <a
@@ -42,7 +45,7 @@ export default function Cont() {
         {/* Slogan ao final */}
         <div className="text-center mt-16">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
-            +12 years of experience in startups, Web3 and Scientific Design.
+            Innovation in Design since 2012
           </h1>
         </div>
       </div>

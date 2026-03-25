@@ -89,7 +89,7 @@ export default function HomepageApp() {
           {/* Adicione mais rotas de projetos conforme necessário */}
         </Routes>
       </main>
-      <Footer year={2025} owner="Allan Rodrigo" />
+      <Footer year={2026} owner="Allan Rodrigo - Product Designer" />
            
 
     </div>

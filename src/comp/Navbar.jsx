@@ -8,70 +8,57 @@ export default function Navbar() {
 
   useEffect(() => setOpen(false), [location.pathname]);
 
-  return (
-    <nav className="w-full bg-black py-0 px-4 fixed top-0 left-0 z-50 border-b border-white font-mono">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-[80px]">
+  const navLinkClass =
+    "rounded-md border border-white/10 bg-white/[0.02] px-4 py-2 text-[14px] font-medium tracking-[0.01em] text-white/90 transition-all duration-300 hover:-translate-y-[1px] hover:border-white/20 hover:bg-white/[0.05] hover:text-white";
 
+  return (
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/50 bg-black/90 backdrop-blur-md">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-5">
         {/* Left: Logo */}
-        <div className="flex items-center gap-4">
-          <Link to="/" className="block w-[120px] h-[80px]">
-            <img
-              src="/imgs/allan/ar-logo.svg"
-              alt="Allan Rodrigo Logo"
-              className="w-full h-full object-contain"
-            />
-          </Link>
-        </div>
+        <Link to="/" className="block h-[76px] w-[116px] shrink-0">
+          <img
+            src="/imgs/allan/ar-logo.svg"
+            alt="Allan Rodrigo Logo"
+            className="h-full w-full object-contain transition-transform duration-300 hover:scale-[1.01]"
+          />
+        </Link>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex gap-4 items-center">
-          <Link
-            to="/about"
-            className="bg-neutral-900 border border-white text-white px-6 py-1 rounded hover:bg-neutral-700 font-bold text-lg transition-all"
-          >
+        <div className="hidden items-center gap-2 lg:flex font-sans">
+          <Link to="/about" className={navLinkClass}>
             About
           </Link>
-          <Link
-            to="/professionalexperience"
-            className="bg-neutral-900 border border-white text-white px-6 py-1 rounded hover:bg-neutral-700 font-bold text-lg transition-all"
-          >
+          <Link to="/professionalexperience" className={navLinkClass}>
             Experience
           </Link>
-          <Link
-            to="/projectx"
-            className="bg-neutral-900 border border-white text-white px-6 py-1 rounded hover:bg-neutral-700 font-bold text-lg transition-all"
-          >
+          <Link to="/projectx" className={navLinkClass}>
             Project Grid
           </Link>
-          <Link
-            to="/timeline-grid"
-            className="bg-neutral-900 border border-white text-white px-6 py-1 rounded font-bold text-lg hover:bg-neutral-700 transition-all shadow"
-          >
+          <Link to="/timeline-grid" className={navLinkClass}>
             Timeline
           </Link>
-          <Link
-            to="/cont"
-            className="bg-neutral-900 border border-white text-white px-6 py-1 rounded font-bold text-lg hover:bg-neutral-700 transition-all shadow"
-          >
+          <Link to="/cont" className={navLinkClass}>
             Contact
           </Link>
         </div>
 
-        {/* Right: CV Button (always visible) */}
-        <div className="flex items-center gap-4">
+        {/* Right */}
+        <div className="flex items-center gap-3 font-sans">
           <a
-            href="https://bit.ly/AR_Portf_2025"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:inline-block bg-black text-white border-2 border-white px-6 py-1 rounded font-bold text-lg shadow hover:bg-white hover:text-black transition-all"
+            href="/imgs/cv/Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+            download="Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+            className="group relative hidden items-center gap-2 overflow-hidden rounded-md border border-white/20 bg-white px-5 py-2 text-[14px] font-semibold tracking-[0.01em] text-black transition-all duration-300 hover:-translate-y-[1px] hover:bg-neutral-100 sm:inline-flex"
           >
-            CHECK CV
+            <span className="relative z-10">Download CV</span>
+            <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-[2px]">
+              ↗
+            </span>
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-black/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
           </a>
 
-          {/* Hamburger button */}
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-white text-3xl focus:outline-none"
+            className="text-[28px] text-white transition-transform duration-300 hover:scale-105 lg:hidden"
             aria-label="Toggle Menu"
           >
             {open ? <FiX /> : <FiMenu />}
@@ -81,20 +68,57 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="lg:hidden bg-black border-t border-white px-4 py-6 space-y-4 text-center">
-          <Link to="/about" className="block text-white text-xl font-bold" onClick={() => setOpen(false)}>About</Link>
-          <Link to="/timeline" className="block text-white text-xl font-bold" onClick={() => setOpen(false)}>Experience</Link>
-          <Link to="/projectx" className="block text-white text-xl font-bold" onClick={() => setOpen(false)}>Project Grid</Link>
-          <Link to="/timeline-grid" className="block text-white text-xl font-bold" onClick={() => setOpen(false)}>Timeline</Link>
-          <Link to="/cont" className="block text-white text-xl font-bold" onClick={() => setOpen(false)}>Contact</Link>
-          <a
-            href="https://bit.ly/AR_Portf_2025"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-black border-2 border-black px-6 py-1 rounded font-bold text-lg shadow hover:bg-black hover:text-white transition-all"
-          >
-            CHECK CV
-          </a>
+        <div className="border-t border-white/10 bg-black/95 px-4 py-5 lg:hidden font-sans">
+          <div className="space-y-3 text-center">
+            <Link
+              to="/about"
+              className="block rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-[15px] font-medium text-white/90 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              About
+            </Link>
+
+            <Link
+              to="/professionalexperience"
+              className="block rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-[15px] font-medium text-white/90 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Experience
+            </Link>
+
+            <Link
+              to="/projectx"
+              className="block rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-[15px] font-medium text-white/90 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Project Grid
+            </Link>
+
+            <Link
+              to="/timeline-grid"
+              className="block rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-[15px] font-medium text-white/90 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Timeline
+            </Link>
+
+            <Link
+              to="/cont"
+              className="block rounded-md border border-white/10 bg-white/[0.02] px-4 py-3 text-[15px] font-medium text-white/90 transition-all duration-300 hover:bg-white/[0.05] hover:text-white"
+              onClick={() => setOpen(false)}
+            >
+              Contact
+            </Link>
+
+            <a
+              href="/imgs/cv/Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+              download="Senior_Graphic_Designer_Allan_Rodrigo.pdf"
+              className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-white px-5 py-3 text-[15px] font-semibold text-black transition-all duration-300 hover:bg-neutral-100"
+            >
+              Download CV
+              <span>↗</span>
+            </a>
+          </div>
         </div>
       )}
     </nav>

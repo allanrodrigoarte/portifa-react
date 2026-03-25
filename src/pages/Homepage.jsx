@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet-async";
-import Header from "../components/home/Header";
 import HeroSection from "../components/home/HeroSection";
 import FeaturedCases from "../components/home/FeaturedCases";
 import ChooseYourPath from "../components/home/ChooseYourPath";
@@ -11,7 +10,7 @@ import Footer from "../components/home/Footer";
 
 export default function Homepage() {
   return (
-    <div className="relative min-h-screen bg-[#050505] text-white overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden bg-[#050505] text-white">
       <Helmet>
         <title>Allan Rodrigo | Senior Product Designer</title>
         <meta
@@ -41,8 +40,6 @@ export default function Homepage() {
             "linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.35), rgba(0,0,0,1))",
         }}
       />
-
-     
 
       <main className="relative z-10">
         <HeroSection />

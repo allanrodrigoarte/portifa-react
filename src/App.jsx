@@ -41,7 +41,8 @@ import Cassuvium from "./pages/projects/Cassuvium";
 import UmaEstrela from "./pages/projects/UmaEstrela";
 import Footer from "./components/Footer";
 import ProfessionalExperience from "./pages/ProfessionalExperience";
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
+
 export default function HomepageApp() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -90,8 +91,7 @@ export default function HomepageApp() {
         </Routes>
       </main>
       <Footer year={2026} owner="Allan Rodrigo - Product Designer" />
-           
-
+      <Analytics />
     </div>
   );
 }
